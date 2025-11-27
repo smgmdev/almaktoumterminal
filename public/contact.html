@@ -198,7 +198,7 @@
     cSel.appendChild(o);
   });
 
-  /* Show "other" field + make it required */
+  /* Show other diversification field */
   document.getElementById("divSel").addEventListener("change", function () {
     const otherField=document.getElementById("other-field");
     const input=otherField.querySelector("input");
@@ -212,7 +212,7 @@
     }
   });
 
-  /* Submit handler (Option A: no-cors always success) */
+  /* Submit handler */
   document.getElementById("contactForm").addEventListener("submit", async function(e){
     e.preventDefault();
 
@@ -230,16 +230,25 @@
         mode:"no-cors"
       });
 
-      status.innerText="Your application has been submitted. Our investor relations team will reach out to you.";
-      status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-emerald-500/20 text-emerald-300 border border-emerald-500";
+      status.innerHTML = `
+        <div>Your application has been submitted. Our investor relations team will reach out to you.</div>
+        <a href="/" class="text-emerald-400 underline hover:text-emerald-300 mt-2 inline-block">
+          ← Click here to go back to the homepage
+        </a>
+      `;
+      status.className=
+        "mb-4 p-3 rounded-lg text-center text-[12px] bg-emerald-500/20 text-emerald-300 border border-emerald-500";
+
       this.reset();
 
     } catch(err){
       status.innerText="Error sending application. Please try again.";
-      status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
+      status.className=
+        "mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
     }
   });
 </script>
+
 
 </body>
 </html>
