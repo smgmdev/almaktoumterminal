@@ -454,7 +454,7 @@ export default function App() {
           loop
           muted
           playsInline
-          src="https://cdn.coverr.co/videos/coverr-finance-chart-1080p.mp4"
+          src="https://corporate.stankeviciusgroup.com/assets/rf/dxb.mp4"
         />
         <div className="relative z-10 text-center max-w-2xl px-6">
           <img
