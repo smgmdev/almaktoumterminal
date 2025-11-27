@@ -12,78 +12,84 @@
 <body class="bg-slate-950 text-slate-50 flex flex-col min-h-screen">
 
   <main class="flex-1 flex items-center justify-center p-6">
-    <div class="bg-slate-900 border border-slate-700 rounded-2xl p-8 w-full max-w-3xl shadow-2xl shadow-black/40 text-[13px]">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl p-8 w-full max-w-4xl shadow-2xl shadow-black/40 text-[13px]">
 
       <div class="flex justify-center mb-6">
-        <img
-          src="https://corporate.stankeviciusgroup.com/assets/rf/logo.png"
-          alt="Logo"
-          class="h-20 object-contain"
-        />
+        <img src="https://corporate.stankeviciusgroup.com/assets/rf/logo.png"
+             class="h-20 object-contain" />
       </div>
 
       <h1 class="text-xl font-semibold mb-4 text-center text-white">
-        Investors seeking capital protection and institutional-grade opportunities may register interest below.
+        Institutional Investor Application
       </h1>
+
       <p class="text-slate-400 text-xs mb-6 text-center">
         Submit your details and our investment relations team will contact you privately.
       </p>
 
-      <!-- FORM START -->
-      <form 
-        action="https://corporate.stankeviciusgroup.com/send-mail.php"
-        method="POST"
-        class="grid grid-cols-2 gap-4"
-      >
+      <!-- SUCCESS / ERROR MESSAGE -->
+      <div id="statusBox" class="hidden mb-4 p-3 rounded-lg text-center text-[12px]"></div>
+
+      <!-- FORM -->
+      <form id="contactForm"
+            class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
         <!-- Full Name -->
-        <div class="space-y-1 col-span-2">
+        <div class="space-y-1">
           <label class="text-[11px] text-slate-300">Full Name *</label>
-          <input name="fullName" required class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <input name="fullName" required
+                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Email -->
-        <div class="space-y-1 col-span-2">
+        <div class="space-y-1">
           <label class="text-[11px] text-slate-300">Email *</label>
-          <input type="email" name="email" required class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <input type="email" name="email" required
+                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Whatsapp -->
-        <div class="space-y-1 col-span-2">
+        <div class="space-y-1">
           <label class="text-[11px] text-slate-300">Whatsapp *</label>
-          <input name="whatsapp" required placeholder="+971 50 000 0000" class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <input name="whatsapp" required placeholder="+971 50 000 0000"
+                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Institution -->
-        <div class="space-y-1 col-span-2">
+        <div class="space-y-1">
           <label class="text-[11px] text-slate-300">Institution Name *</label>
-          <input name="institution" required class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <input name="institution" required
+                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
-        <!-- Website -->
-        <div class="space-y-1 col-span-2">
+        <!-- Website (FULL WIDTH) -->
+        <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Website (optional)</label>
-          <input name="website" placeholder="https://" class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <input name="website" placeholder="https://"
+                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Country -->
-        <div class="space-y-1 col-span-2">
+        <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Country *</label>
-          <select name="country" required class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <select name="country" required
+                  class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
             <option disabled selected>Select country</option>
           </select>
         </div>
 
         <!-- Industry -->
-        <div class="space-y-1 col-span-2">
+        <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Main Business Industry *</label>
-          <input name="industry" required class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <input name="industry" required
+                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Investment Amount -->
-        <div class="space-y-1 col-span-2">
-          <label class="text-[11px] text-slate-300">Investment Amount Open for Deployment *</label>
-          <select name="amount" required class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+        <div class="space-y-1 md:col-span-2">
+          <label class="text-[11px] text-slate-300">Investment Amount *</label>
+          <select name="amount" required
+                  class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
             <option>5-10M</option>
             <option>10-20M</option>
             <option>20-50M</option>
@@ -92,10 +98,11 @@
           </select>
         </div>
 
-        <!-- Diversification Preference -->
-        <div class="space-y-1 col-span-2">
+        <!-- Diversification -->
+        <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Diversification Preference *</label>
-          <select name="diversification" id="divSel" required class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <select name="diversification" id="divSel" required
+                  class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
             <option>Private Equity</option>
             <option>Digital Assets</option>
             <option>Real Estate and Development</option>
@@ -106,47 +113,98 @@
           </select>
         </div>
 
-        <!-- Other diversification -->
-        <div id="other-field" class="space-y-1 col-span-2 hidden">
+        <!-- Other Field -->
+        <div id="other-field" class="space-y-1 md:col-span-2 hidden">
           <label class="text-[11px] text-slate-300">Please specify</label>
-          <input name="otherDiversification" class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+          <input name="otherDiversification"
+                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
-        <!-- Submit Buttons -->
-        <div class="col-span-2 flex justify-end gap-3 pt-3">
-          <button type="reset" class="px-4 py-2 bg-slate-700 text-white rounded text-[11px]">Reset</button>
-          <button type="submit" class="px-5 py-2 bg-emerald-500 text-black font-semibold rounded text-[11px] hover:bg-emerald-400">Submit</button>
+        <!-- Submit -->
+        <div class="md:col-span-2 flex justify-end gap-3 pt-3">
+          <button type="reset"
+                  class="px-4 py-2 bg-slate-700 text-white rounded text-[11px]">Reset</button>
+
+          <button type="submit"
+                  class="px-5 py-2 bg-emerald-500 text-black font-semibold rounded text-[11px] hover:bg-emerald-400">
+            Submit
+          </button>
         </div>
 
       </form>
-      <!-- FORM END -->
-
     </div>
   </main>
 
-  <footer class="w-full py-4 border-t border-slate-800 bg-black/60 text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-      © <script>document.write(new Date().getFullYear())</script> 
-      Al Maktoum Capital Protection Division under AbdulHakim AlMaktoum Kanak Financial Brokerage LLC. 
-      All rights reserved.
-    </div>
+  <footer class="w-full py-4 border-t border-slate-800 bg-black/60 text-xs text-slate-500 text-center">
+    © <script>document.write(new Date().getFullYear())</script>
+    Al Maktoum Capital Protection Division.
   </footer>
 
+
 <script>
-  // Countries
-  const countries=[ "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Korea (North)","Korea (South)","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Macedonia","Norway","Oman","Pakistan","Palau","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","Spain","Sri Lanka","Sudan","South Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
+  /* Populate countries */
+  const countries=[ "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina",
+  "Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus",
+  "Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei",
+  "Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic",
+  "Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic",
+  "Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea",
+  "Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany",
+  "Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary",
+  "Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan",
+  "Kenya","Kiribati","Korea (North)","Korea (South)","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon",
+  "Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia",
+  "Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco",
+  "Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand",
+  "Nicaragua","Niger","Nigeria","North Macedonia","Norway","Oman","Pakistan","Palau","Panama","Papua New Guinea",
+  "Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis",
+  "Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia",
+  "Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia",
+  "South Africa","Spain","Sri Lanka","Sudan","South Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan",
+  "Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey",
+  "Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay",
+  "Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe" ];
 
-  const countrySel=document.querySelector("select[name='country']");
-  countries.forEach(c=>{
-    const opt=document.createElement("option");
-    opt.textContent=c;
-    countrySel.appendChild(opt);
+  const cSel=document.querySelector("select[name='country']");
+  countries.forEach(c=>{ let o=document.createElement("option"); o.textContent=c; cSel.appendChild(o); });
+
+  /* Show "other" field */
+  document.getElementById("divSel").addEventListener("change", function () {
+    document.getElementById("other-field").classList.toggle("hidden", this.value !== "other");
   });
 
-  // Other field toggle
-  document.getElementById("divSel").addEventListener("change",function(){
-    document.getElementById("other-field").classList.toggle("hidden",this.value!=="other");
+  /* Submit handler */
+  document.getElementById("contactForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const status=document.getElementById("statusBox");
+    status.classList.remove("hidden");
+    status.innerText="Sending application...";
+    status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-slate-800 text-slate-300";
+
+    const formData = new FormData(this);
+
+    try {
+      const resp=await fetch("https://corporate.stankeviciusgroup.com/send-mail.php",{
+        method:"POST",
+        body:formData
+      });
+
+      const text = await resp.text();
+
+      if(resp.ok && text.includes("OK")){
+        status.innerText="Your application has been submitted. Our investor relations team will reach out to you.";
+        status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-emerald-500/20 text-emerald-300 border border-emerald-500";
+        this.reset();
+      } else {
+        throw new Error("Mail error");
+      }
+    } catch(err){
+      status.innerText="Error sending application. Please try again.";
+      status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
+    }
   });
+
 </script>
 
 </body>
