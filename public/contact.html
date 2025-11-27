@@ -3,22 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Investor Application</title>
+
+  <!-- SEO Metadata -->
+  <title>Al Maktoum Finance - Institutional Level Intelligence</title>
+  <meta name="description" content="High-finance business brokerage. AI. Private Equity. Real Assets. Tokenization." />
+  <meta name="keywords" content="high finance dubai, al maktoum finance, private equity dubai, real estate dubai, tokenization dubai, asset management dubai, investment management dubai, investing dubai" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Al Maktoum Finance - Institutional Level Intelligence" />
+  <meta property="og:description" content="High-finance business brokerage. AI. Private Equity. Real Assets. Tokenization." />
+  <meta property="og:image" content="/thumbnailal.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Al Maktoum Finance - Institutional Level Intelligence" />
+  <meta name="twitter:description" content="High-finance business brokerage. AI. Private Equity. Real Assets. Tokenization." />
+  <meta name="twitter:image" content="/thumbnailal.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 
 <body class="bg-slate-950 text-slate-50 flex flex-col min-h-screen">
 
   <main class="flex-1 flex items-center justify-center p-6">
     <div class="bg-slate-900 border border-slate-700 rounded-2xl p-8 w-full max-w-4xl shadow-2xl shadow-black/40 text-[13px]">
 
+      <!-- LOGO -->
       <div class="flex justify-center mb-6">
         <img src="https://corporate.stankeviciusgroup.com/assets/rf/logo.png"
              class="h-20 object-contain" />
       </div>
 
+      <!-- HEADER -->
       <h1 class="text-xl font-semibold mb-4 text-center text-white">
         Institutional Investor Application
       </h1>
@@ -27,54 +50,53 @@
         Submit your details and our investment relations team will contact you privately.
       </p>
 
-      <!-- SUCCESS / ERROR MESSAGE -->
+      <!-- STATUS MESSAGE -->
       <div id="statusBox" class="hidden mb-4 p-3 rounded-lg text-center text-[12px]"></div>
 
       <!-- FORM -->
-      <form id="contactForm"
-            class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
         <!-- Full Name -->
         <div class="space-y-1">
           <label class="text-[11px] text-slate-300">Full Name *</label>
           <input name="fullName" required
-                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Email -->
         <div class="space-y-1">
           <label class="text-[11px] text-slate-300">Email *</label>
           <input type="email" name="email" required
-                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Whatsapp -->
         <div class="space-y-1">
           <label class="text-[11px] text-slate-300">Whatsapp *</label>
           <input name="whatsapp" required placeholder="+971 50 000 0000"
-                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Institution -->
         <div class="space-y-1">
           <label class="text-[11px] text-slate-300">Institution Name *</label>
           <input name="institution" required
-                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
-        <!-- Website (FULL WIDTH) -->
+        <!-- Website -->
         <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Website (optional)</label>
           <input name="website" placeholder="https://"
-                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Country -->
         <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Country *</label>
           <select name="country" required
-                  class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
-            <option disabled selected>Select country</option>
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            <option value="" disabled selected hidden>Select country</option>
           </select>
         </div>
 
@@ -82,19 +104,20 @@
         <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Main Business Industry *</label>
           <input name="industry" required
-                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Investment Amount -->
         <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Investment Amount *</label>
           <select name="amount" required
-                  class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
-            <option>5-10M</option>
-            <option>10-20M</option>
-            <option>20-50M</option>
-            <option>100-500M</option>
-            <option>500M-1B</option>
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            <option value="" disabled selected hidden>Select amount</option>
+            <option value="5-10M">5-10M</option>
+            <option value="10-20M">10-20M</option>
+            <option value="20-50M">20-50M</option>
+            <option value="100-500M">100-500M</option>
+            <option value="500M-1B">500M-1B</option>
           </select>
         </div>
 
@@ -102,13 +125,14 @@
         <div class="space-y-1 md:col-span-2">
           <label class="text-[11px] text-slate-300">Diversification Preference *</label>
           <select name="diversification" id="divSel" required
-                  class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
-            <option>Private Equity</option>
-            <option>Digital Assets</option>
-            <option>Real Estate and Development</option>
-            <option>Global Trade</option>
-            <option>Startups</option>
-            <option>Fintech</option>
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            <option value="" disabled selected hidden>Select diversification</option>
+            <option value="Private Equity">Private Equity</option>
+            <option value="Digital Assets">Digital Assets</option>
+            <option value="Real Estate and Development">Real Estate and Development</option>
+            <option value="Global Trade">Global Trade</option>
+            <option value="Startups">Startups</option>
+            <option value="Fintech">Fintech</option>
             <option value="other">Other</option>
           </select>
         </div>
@@ -117,16 +141,16 @@
         <div id="other-field" class="space-y-1 md:col-span-2 hidden">
           <label class="text-[11px] text-slate-300">Please specify</label>
           <input name="otherDiversification"
-                 class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
         </div>
 
         <!-- Submit -->
         <div class="md:col-span-2 flex justify-end gap-3 pt-3">
           <button type="reset"
-                  class="px-4 py-2 bg-slate-700 text-white rounded text-[11px]">Reset</button>
+            class="px-4 py-2 bg-slate-700 text-white rounded text-[11px]">Reset</button>
 
           <button type="submit"
-                  class="px-5 py-2 bg-emerald-500 text-black font-semibold rounded text-[11px] hover:bg-emerald-400">
+            class="px-5 py-2 bg-emerald-500 text-black font-semibold rounded text-[11px] hover:bg-emerald-400">
             Submit
           </button>
         </div>
@@ -137,10 +161,11 @@
 
   <footer class="w-full py-4 border-t border-slate-800 bg-black/60 text-xs text-slate-500 text-center">
     © <script>document.write(new Date().getFullYear())</script>
-    Al Maktoum Capital Protection Division.
+    Al Maktoum Capital Protection Division under AbdulHakim AlMaktoum Kanak Financial Brokerage LLC. All rights reserved.
   </footer>
 
 
+<!-- JS -->
 <script>
   /* Populate countries */
   const countries=[ "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina",
@@ -166,52 +191,54 @@
   "Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe" ];
 
   const cSel=document.querySelector("select[name='country']");
-  countries.forEach(c=>{ let o=document.createElement("option"); o.textContent=c; cSel.appendChild(o); });
-
-  /* Show "other" field */
-  document.getElementById("divSel").addEventListener("change", function () {
-    document.getElementById("other-field").classList.toggle("hidden", this.value !== "other");
+  countries.forEach(c=>{
+    let o=document.createElement("option");
+    o.textContent=c;
+    o.value=c;
+    cSel.appendChild(o);
   });
 
-  /* Submit handler */
-  document.getElementById("contactForm").addEventListener("submit", async function(e){
-  e.preventDefault();
+  /* Show "other" field + make it required */
+  document.getElementById("divSel").addEventListener("change", function () {
+    const otherField=document.getElementById("other-field");
+    const input=otherField.querySelector("input");
 
-  const status = document.getElementById("statusBox");
-  status.classList.remove("hidden");
-  status.innerText = "Sending application...";
-  status.className = "mb-4 p-3 rounded-lg text-center text-[12px] bg-slate-800 text-slate-300";
-
-  const formData = new FormData(this);
-
-  try {
-    const resp = await fetch("https://corporate.stankeviciusgroup.com/send-mail.php", {
-      method: "POST",
-      body: formData
-    });
-
-    const json = await resp.json();
-
-    if (json.status === "ok") {
-      status.innerText =
-        "Your application has been submitted. Our investor relations team will reach out to you.";
-      status.className =
-        "mb-4 p-3 rounded-lg text-center text-[12px] bg-emerald-500/20 text-emerald-300 border border-emerald-500";
-
-      this.reset();
+    if (this.value === "other") {
+      otherField.classList.remove("hidden");
+      input.setAttribute("required", "required");
     } else {
-      status.innerText = "Error sending application. Please try again.";
-      status.className =
-        "mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
+      otherField.classList.add("hidden");
+      input.removeAttribute("required");
     }
-  } catch (err) {
-    status.innerText = "Error sending application. Please try again.";
-    status.className =
-      "mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
-  }
-});
+  });
 
+  /* Submit handler (Option A: no-cors always success) */
+  document.getElementById("contactForm").addEventListener("submit", async function(e){
+    e.preventDefault();
 
+    const status=document.getElementById("statusBox");
+    status.classList.remove("hidden");
+    status.innerText="Sending application...";
+    status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-slate-800 text-slate-300";
+
+    const formData=new FormData(this);
+
+    try {
+      await fetch("https://corporate.stankeviciusgroup.com/send-mail.php",{
+        method:"POST",
+        body:formData,
+        mode:"no-cors"
+      });
+
+      status.innerText="Your application has been submitted. Our investor relations team will reach out to you.";
+      status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-emerald-500/20 text-emerald-300 border border-emerald-500";
+      this.reset();
+
+    } catch(err){
+      status.innerText="Error sending application. Please try again.";
+      status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
+    }
+  });
 </script>
 
 </body>
