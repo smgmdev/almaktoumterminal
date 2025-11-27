@@ -175,35 +175,42 @@
 
   /* Submit handler */
   document.getElementById("contactForm").addEventListener("submit", async function(e){
-    e.preventDefault();
+  e.preventDefault();
 
-    const status=document.getElementById("statusBox");
-    status.classList.remove("hidden");
-    status.innerText="Sending application...";
-    status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-slate-800 text-slate-300";
+  const status = document.getElementById("statusBox");
+  status.classList.remove("hidden");
+  status.innerText = "Sending application...";
+  status.className = "mb-4 p-3 rounded-lg text-center text-[12px] bg-slate-800 text-slate-300";
 
-    const formData = new FormData(this);
+  const formData = new FormData(this);
 
-    try {
-      const resp=await fetch("https://corporate.stankeviciusgroup.com/send-mail.php",{
-        method:"POST",
-        body:formData
-      });
+  try {
+    const resp = await fetch("https://corporate.stankeviciusgroup.com/send-mail.php", {
+      method: "POST",
+      body: formData
+    });
 
-      const text = await resp.text();
+    const json = await resp.json();
 
-      if(resp.ok && text.includes("OK")){
-        status.innerText="Your application has been submitted. Our investor relations team will reach out to you.";
-        status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-emerald-500/20 text-emerald-300 border border-emerald-500";
-        this.reset();
-      } else {
-        throw new Error("Mail error");
-      }
-    } catch(err){
-      status.innerText="Error sending application. Please try again.";
-      status.className="mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
+    if (json.status === "ok") {
+      status.innerText =
+        "Your application has been submitted. Our investor relations team will reach out to you.";
+      status.className =
+        "mb-4 p-3 rounded-lg text-center text-[12px] bg-emerald-500/20 text-emerald-300 border border-emerald-500";
+
+      this.reset();
+    } else {
+      status.innerText = "Error sending application. Please try again.";
+      status.className =
+        "mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
     }
-  });
+  } catch (err) {
+    status.innerText = "Error sending application. Please try again.";
+    status.className =
+      "mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
+  }
+});
+
 
 </script>
 
