@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Schedule a Meeting - Al Maktoum Finance</title>
+  <meta name="description" content="Schedule a meeting with Al Maktoum Finance." />
+  <meta name="keywords" content="meeting, al maktoum finance, capital raising, consulting dubai" />
+
+  <meta property="og:title" content="Schedule a Meeting - Al Maktoum Finance" />
+  <meta property="og:description" content="Schedule a meeting with our brokerage and consulting division." />
+  <meta property="og:image" content="/thumbnailal.png" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Schedule a Meeting - Al Maktoum Finance" />
+  <meta name="twitter:description" content="Schedule a meeting with our brokerage and consulting division." />
+  <meta name="twitter:image" content="/thumbnailal.png" />
+
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-50 flex flex-col min-h-screen">
+
+  <main class="flex-1 flex items-center justify-center p-6">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl p-8 w-full max-w-4xl shadow-2xl shadow-black/40 text-[13px]">
+
+      <div class="flex justify-center mb-6">
+        <img src="https://corporate.stankeviciusgroup.com/assets/rf/logo.png"
+             class="h-20 object-contain" />
+      </div>
+
+      <h1 class="text-xl font-semibold mb-4 text-center text-white">
+        Schedule a Meeting
+      </h1>
+
+      <p class="text-slate-400 text-xs mb-6 text-center">
+        Provide your details and choose a meeting topic. Our team will reach out shortly if approved.
+      </p>
+
+      <div id="statusBox" class="hidden mb-4 p-3 rounded-lg text-center text-[12px]"></div>
+
+      <form id="meetingForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Full Name -->
+        <div class="space-y-1">
+          <label class="text-[11px] text-slate-300">Full Name *</label>
+          <input name="fullName" required
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+        </div>
+
+        <!-- Company Name -->
+        <div class="space-y-1">
+          <label class="text-[11px] text-slate-300">Company Name *</label>
+          <input name="company" required
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+        </div>
+
+        <!-- Company Website (optional) -->
+        <div class="space-y-1 md:col-span-2">
+          <label class="text-[11px] text-slate-300">Company Website (optional)</label>
+          <input name="companyWebsite" placeholder="https://yourcompany.com"
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+        </div>
+
+        <!-- Email -->
+        <div class="space-y-1">
+          <label class="text-[11px] text-slate-300">Email *</label>
+          <input name="email" type="email" required
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+        </div>
+
+        <!-- Whatsapp -->
+        <div class="space-y-1">
+          <label class="text-[11px] text-slate-300">Whatsapp *</label>
+          <input name="whatsapp" required placeholder="+971 50 000 0000"
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+        </div>
+
+        <!-- Country -->
+        <div class="space-y-1 md:col-span-2">
+          <label class="text-[11px] text-slate-300">Where are you from? *</label>
+          <select name="country" required
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            <option value="" disabled selected hidden>Select country</option>
+          </select>
+        </div>
+
+        <!-- Topic -->
+        <div class="space-y-1 md:col-span-2">
+          <label class="text-[11px] text-slate-300">Topic for Meeting *</label>
+          <select name="topic" required
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            <option value="" disabled selected hidden>Select topic</option>
+            <option>We want to invest in Al Maktoum Finance</option>
+            <option>We are looking to promote our business in the UAE and internationally</option>
+            <option>We need IR/PR services for a capital raising</option>
+            <option>Greet and meet</option>
+            <option>We are looking for specialty consulting services</option>
+          </select>
+        </div>
+
+        <!-- Preferred Meeting Date -->
+        <div class="space-y-1">
+          <label class="text-[11px] text-slate-300">Preferred Meeting Date *</label>
+          <input type="date" name="meetingDate" required
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+        </div>
+
+        <!-- Preferred Meeting Hour -->
+        <div class="space-y-1">
+          <label class="text-[11px] text-slate-300">Preferred Hour (11:00–18:00) *</label>
+          <select name="meetingHour" required
+            class="w-full p-2 rounded-lg bg-slate-800 border border-slate-700 text-white text-[12px]">
+            <option value="" disabled selected hidden>Select hour</option>
+            <option>11:00</option>
+            <option>12:00</option>
+            <option>13:00</option>
+            <option>14:00</option>
+            <option>15:00</option>
+            <option>16:00</option>
+            <option>17:00</option>
+            <option>18:00</option>
+          </select>
+        </div>
+
+        <!-- Submit -->
+        <div class="md:col-span-2 flex justify-end gap-3 pt-3">
+          <button type="reset"
+            class="px-4 py-2 bg-slate-700 text-white rounded text-[11px]">Reset</button>
+
+          <button type="submit"
+            class="px-5 py-2 bg-emerald-500 text-black font-semibold rounded text-[11px] hover:bg-emerald-400">
+            Submit
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <footer class="w-full py-4 border-t border-slate-800 bg-black/60 text-xs text-slate-500 text-center">
+    © <script>document.write(new Date().getFullYear())</script>
+    Al Maktoum Capital Protection Division under AbdulHakim AlMaktoum Kanak Financial Brokerage LLC. All rights reserved.
+  </footer>
+
+<script>
+  const countries = [
+    "Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Australia","Austria",
+    "Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan",
+    "Bolivia","Brazil","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Chile","China",
+    "Colombia","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti",
+    "Dominican Republic","Ecuador","Egypt","Finland","France","Gabon","Georgia","Germany","Ghana","Greece",
+    "Guatemala","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland",
+    "Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Korea (South)","Kuwait","Kyrgyzstan",
+    "Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Lithuania","Luxembourg","Madagascar","Malaysia",
+    "Maldives","Mali","Malta","Mexico","Moldova","Monaco","Mongolia","Morocco","Mozambique","Myanmar",
+    "Namibia","Nepal","Netherlands","New Zealand","Nicaragua","Nigeria","Norway","Oman","Pakistan","Panama",
+    "Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda",
+    "Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia",
+    "Somalia","South Africa","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan",
+    "Tanzania","Thailand","Togo","Tonga","Tunisia","Turkey","Turkmenistan","Uganda","Ukraine",
+    "United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Venezuela",
+    "Vietnam","Yemen","Zambia","Zimbabwe"
+  ];
+
+  const cSel = document.querySelector("select[name='country']");
+  countries.forEach(country => {
+    const opt = document.createElement("option");
+    opt.value = country;
+    opt.textContent = country;
+    cSel.appendChild(opt);
+  });
+
+  document.getElementById("meetingForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const status = document.getElementById("statusBox");
+    status.classList.remove("hidden");
+    status.innerText = "Sending request...";
+    status.className = "mb-4 p-3 rounded-lg text-center text-[12px] bg-slate-800 text-slate-300";
+
+    const formData = new FormData(this);
+
+    try {
+      await fetch("https://corporate.stankeviciusgroup.com/assets/rf/send-mail-meeting.php", {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      });
+
+      status.innerHTML = `
+        <div>Your meeting request has been submitted. Our team will contact you shortly.</div>
+        <a href="/" class="text-emerald-400 underline hover:text-emerald-300 mt-2 inline-block">← Back to homepage</a>
+      `;
+      status.className =
+        "mb-4 p-3 rounded-lg text-center text-[12px] bg-emerald-500/20 text-emerald-300 border border-emerald-500";
+
+      this.reset();
+
+    } catch(err) {
+      status.innerText = "Error sending request. Please try again.";
+      status.className =
+        "mb-4 p-3 rounded-lg text-center text-[12px] bg-red-500/20 text-red-300 border border-red-500";
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -475,8 +475,12 @@ export default function App() {
 >
 Apply to invest
 </a>
-
-
+<a
+  href="/meeting.html"
+  className="px-5 py-2.5 rounded-lg bg-white text-black text-sm font-semibold shadow-lg shadow-emerald-400/40 hover:shadow-emerald-500/70 transition"
+>
+Schedule a meeting
+</a>
           </div>
         </div>
       </section>
@@ -679,7 +683,15 @@ Apply to invest
       {/* FOOTER */}
       <footer className="w-full py-4 border-t border-slate-800 bg-black/60 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-        © {new Date().getFullYear()} Al Maktoum Capital Protection Division under AbdulHakim AlMaktoum Kanak Financial Brokerage LLC. All rights reserved.</div>
+        © {new Date().getFullYear()} Al Maktoum Capital Protection Division under AbdulHakim AlMaktoum Kanak Financial Brokerage LLC. All rights reserved.
+        
+        </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        
+        Disclaimer: AbdulHakim AlMaktoum Kanak Financial Brokerage LLC does not provide investment services to clients. AbdulHakim AlMaktoum Kanak Financial Brokerage LLC is a brokerage company only. The site www.almaktoumfinance.com provides AI fetched real-time data for visual purposes and is not indend to sell any digital asset related investments or services. AbdulHakim AlMaktoum Kanak Financial Brokerage LLC acts as a broker to connect investors with international projects.
+        </div>
+
       </footer>
     </div>
   );
